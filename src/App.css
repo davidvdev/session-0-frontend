@@ -1,3 +1,28 @@
+:root {
+  --teal: #11A584
+}
+
 .App {
   text-align: center;
+  height: 100vh;
+}
+
+header, footer {
+  padding: 1em 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--teal);
+  color: white
+}
+
+.nav-button {
+  color: white;
+  height: 2em;
+  width: 2em;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
 }

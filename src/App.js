@@ -10,6 +10,7 @@ import Welcome from './pages/Welcome';
 import SignUp from './pages/SignUp';
 import SignUpDetails from './pages/SignUpDetails'
 import Login from './pages/Login';
+import Home from './pages/Home';
 
 function App(props) {
 // STATE & VARIABLES
@@ -89,7 +90,7 @@ return (
             />
             <Route
                 path="/home"
-                render={(routerprops) => <h1>{userAuth.userRef} {}</h1>}
+                render={(routerprops) => <Home {...routerprops}/>}
             />
         </Switch>
     </div>

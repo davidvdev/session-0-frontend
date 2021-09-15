@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SignUpForm = ({ submitLabel }) => {
+const SignUpForm = ({ submitLabel, history }) => {
 
     let message;
 
@@ -19,10 +19,11 @@ const SignUpForm = ({ submitLabel }) => {
         event.preventDefault()
         // make fetch to backend for user auth
         // store credentials in recoil
+        history.push("/signup/details/")
     }
 
     return (
-        <form>
+        <form onSubmit={handleSubmission}>
             <label htmlFor="name">name </label>
             <input 
                 type="name"

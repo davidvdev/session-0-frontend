@@ -1,12 +1,15 @@
 import { atom } from 'recoil'
 
 export const UserAuth = atom({
-    key: "user",
-    default: ""
+    key: "UserAuth",
+    default: {
+        token: "",
+        userRef: ""
+    }
 })
 
 export const AuthFormData = atom({
-    key: "formData",
+    key: "AuthFormData",
     default: {
         email: "",
         password: ""

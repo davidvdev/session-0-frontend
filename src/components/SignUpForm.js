@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
-const SignUpForm = ({ submitLabel, history }) => {
-
-    let message;
+const SignUpForm = ({ submitLabel, history, handleSubmit }) => {
 
     const [formData, setFormData] = useState({
         email: "",
@@ -17,9 +15,7 @@ const SignUpForm = ({ submitLabel, history }) => {
 
     const handleSubmission = (event) => {
         event.preventDefault()
-        // make fetch to backend for user auth
-        // store credentials in recoil
-        history.push("/signup/details/")
+        handleSubmit(formData)
     }
 
     return (

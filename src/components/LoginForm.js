@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-const LoginForm = ({ submitLabel }) => {
+const LoginForm = ({ submitLabel, history, handleSubmit }) => {
+
     const [formData, setFormData] = useState({
         email: "",
         password: ""
@@ -12,19 +13,19 @@ const LoginForm = ({ submitLabel }) => {
 
     const handleSubmission = (event) => {
         event.preventDefault()
-        // make fetch to backend for user auth
-        // store credentials in recoil
+        console.log('formData: ', formData)
+        handleSubmit(formData)
     }
 
     return (
-        <form>
+        <form onSubmit={handleSubmission}>
             <label htmlFor="email">email </label>
             <input 
                 type="email"
                 name="email"
                 onChange={handleChange}
                 value={formData.email}
-                required="true"
+                required={true}
             />
             <br/>
             <label htmlFor="password">password </label>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const SignUpDetails = ({history}) => {
+const SignUpDetails = ({history, handleSubmit}) => {
     const [userProfiles, setUserProfiles] = useState({
         player: false,
         gm: false
@@ -25,7 +25,10 @@ const SignUpDetails = ({history}) => {
 
     const handleSubmission = (event) => {
         event.preventDefault()
-        history.push("/home")
+        handleSubmit({
+            "profile_pc": pcFormData, 
+            "profile_gm": gmFormData
+        })
     }
 
     const profileToggle = (profile) => {

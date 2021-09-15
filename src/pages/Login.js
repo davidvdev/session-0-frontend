@@ -1,16 +1,15 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 
 import LogoSplash from "../components/LogoSplash";
 import LoginForm from "../components/LoginForm";
 
-const Login = () => {
+const Login = (props) => {
 
     return(
     <>
 		<LogoSplash />
 		<hr />
-		<LoginForm submitLabel="Login"/>
+		<LoginForm {...props} handleSubmit={props.login} submitLabel="Login"/>
     </>
     )
 }

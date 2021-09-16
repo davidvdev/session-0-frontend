@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { TiArrowLeftThick } from 'react-icons/ti'
 
-const Header = ({ label, back}) => {
+const Header = ({ label = " ", back = true}) => {
     return(
         <header>
             {   back === true &&

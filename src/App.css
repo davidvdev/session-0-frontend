@@ -6,7 +6,9 @@
   text-align: center;
   height: 100vh;
 }
-
+header {
+  justify-self: start;
+}
 header, footer {
   padding: 1em 0.5em;
   display: flex;
@@ -15,6 +17,9 @@ header, footer {
   background-color: var(--teal);
   color: white
 }
+footer {
+  justify-self: end;
+}
 
 .nav-button {
   color: white;
@@ -22,7 +27,50 @@ header, footer {
   width: 2em;
 }
 
-.home {
+.Home {
+  height: inherit;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+.feed {
+  padding: 0.25em 1em 0 1em;
+}
+.card-big {
+  border: 1px solid whitesmoke;
+  border-radius: 1em;
+  padding: 0.5em;
+}
+
+.profile-toggle div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 2em;
+  border-bottom: 1px solid whitesmoke
+}
+
+.GroupSearch {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.group-form label{
+  margin-top: 1.5em;
+}
+
+.group-info {
+  text-align: left;
+}
+
+.Participants {
+  width: 30%;
+}
+
+.Participants div {
+  display: flex;
+  justify-content: space-around;
 }

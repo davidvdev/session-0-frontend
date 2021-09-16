@@ -1,20 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 // import { useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import { useRecoilState } from 'recoil';
 import { UserAuth } from './atom';
 
-// components
+// components & pages
 import Welcome from './pages/Welcome';
 import SignUp from './pages/SignUp';
 import SignUpDetails from './pages/SignUpDetails'
 import Login from './pages/Login';
 import Home from './pages/Home';
+import Profile from './pages/Profile'
+import Search from './pages/Search'
+import Group from './pages/Group'
+import NewGroup from './pages/NewGroup';
 
 function App(props) {
 // STATE & VARIABLES
 const [userAuth, setUserAuth] = useRecoilState(UserAuth)
+
 const url = "http://localhost:4500/"
 // const url = "https://session-0-dv.herokuapp.com/"
 
@@ -50,12 +55,10 @@ const signup = async (formData) => {
 }
 
 const updateProfile = async (update) => {
-
     const updates = {
         data: update,
         userAuth
     }
-    console.log('sending: ', JSON.stringify(updates))
 
     await fetch(url + 'user', {
         method: "put",
@@ -64,10 +67,21 @@ const updateProfile = async (update) => {
         },
         body: JSON.stringify(updates)
     })
-    // const data = await response.json()
     props.history.push("/home")
 }
 
+const createNewGroup = (data) => {
+    console.log("Group Created!")
+    props.history.push("/home")
+}
+
+useEffect(() => {
+    setUserAuth(JSON.parse(window.sessionStorage.getItem("userAuth")))
+},[])
+
+useEffect(() => {
+    window.sessionStorage.setItem("userAuth", JSON.stringify(userAuth))
+},[userAuth])
 
 return (
     <div className="App">
@@ -91,6 +105,22 @@ return (
             <Route
                 path="/home"
                 render={(routerprops) => <Home {...routerprops}/>}
+            />
+            <Route
+                path="/profile/:id"
+                render={(routerprops) => <Profile {...routerprops} url={url} userID={userAuth.userRef}/>}
+            />
+            <Route
+                path="/search"
+                render={(routerprops) => <Search {...routerprops}/>}
+            />
+            <Route
+                path="/group"
+                render={(routerprops) => <Group {...routerprops}/>}
+            />
+            <Route
+                path="/newgroup"
+                render={(routerprops) => <NewGroup {...routerprops} handleSubmit={createNewGroup}/>}
             />
         </Switch>
     </div>

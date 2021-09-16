@@ -26,8 +26,8 @@ const SignUpDetails = ({history, handleSubmit}) => {
     const handleSubmission = (event) => {
         event.preventDefault()
         handleSubmit({
-            "profile_pc": pcFormData, 
-            "profile_gm": gmFormData
+            "profile_pc": [pcFormData], 
+            "profile_gm": [gmFormData]
         })
     }
 
@@ -69,8 +69,8 @@ const SignUpDetails = ({history, handleSubmit}) => {
                     <input
                         type="text"
                         name="system"
-                        value={pcFormData.system}
-                        onChange={handleChangePC}
+                        value={gmFormData.system}
+                        onChange={handleChangeGM}
                     />
                     <h4>Are you looking for a group to run?</h4>
                     <input type="radio" name="lfg" id="yes" value={true} onChange={handleChangeGM}/>

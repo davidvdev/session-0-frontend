@@ -15,3 +15,15 @@ export const AuthFormData = atom({
         password: ""
     }
 })
+
+export const GroupSearchTerm = atom({
+    key: "GroupSearchTerm",
+    default: {
+        term: ""
+    }
+})
+
+export const UserInfo = atom ({
+    key: "UserInfo",
+    default: null
+})

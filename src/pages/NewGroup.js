@@ -8,7 +8,7 @@ const NewGroup = ({handleSubmit}) => {
         gameInfo:"",
         groupInfo:"",
         players:"",
-        gm:"",
+        gm: "",
         bannerImg: ""
     })
 

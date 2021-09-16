@@ -22,12 +22,8 @@ const Profile = (props) => {
             body: JSON.stringify(userAuth)
         })
         const data = await response.json()
-        console.log('DATA: ', data)
         setUserInfo(data)
     }
-
-    console.log('userInfo: ', userInfo)
-    console.log('userAuth: ', userAuth)
     useEffect(() => {grabProfileInfo()},[])
 
     const loading = () => {

@@ -27,3 +27,13 @@ export const UserInfo = atom ({
     key: "UserInfo",
     default: null
 })
+
+export const GroupInfo = atom ({
+    key: "GroupInfo",
+    default: null
+})
+
+export const AllGroups = atom ({
+    key: "AllGroups",
+    default: null
+})

@@ -3,7 +3,7 @@ import React from "react";
 const ProfileGM = ({ info }) => {
     return (
         <div className="subprofile">
-            { info.length > 0 &&
+            { info.length >= 1 &&
                 <>
                 { info.map(entry => {
                     return (
@@ -15,7 +15,7 @@ const ProfileGM = ({ info }) => {
                 })}
                 </>
             }
-            { info.length <= 1 &&
+            { info.length < 1 &&
                 <p>Fill out your profile to display your info!</p>
             }
         </div>

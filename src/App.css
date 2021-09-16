@@ -43,13 +43,42 @@ footer {
   padding: 0.5em;
 }
 
+.card-small {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid whitesmoke;
+  border-radius: 1em;
+  padding: 0.5em 2em;
+  margin: 0.5em 1em;
+}
+
+.card-small img {
+  height: 75px;
+  width: 75px;
+  object-fit: cover;
+  border-radius: 90px;
+}
+
+.card-small .left {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card-small .right {
+  width: 45%;
+}
+
 .profile-toggle div {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 2em;
-  border-bottom: 1px solid whitesmoke
+  border-bottom: 1px solid whitesmoke;
+  cursor: pointer;
 }
 
 .GroupSearch {

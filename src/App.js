@@ -55,7 +55,7 @@ const signup = async (formData) => {
 }
 
 const updateProfile = async (update) => {
-    const updates = {
+    const bundle = {
         data: update,
         userAuth
     }
@@ -65,14 +65,26 @@ const updateProfile = async (update) => {
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(updates)
+        body: JSON.stringify(bundle)
     })
     props.history.push("/home")
 }
 
-const createNewGroup = (data) => {
-    console.log("Group Created!")
-    props.history.push("/home")
+const createNewGroup = async (group) => {
+    const bundle = {
+        data: group,
+        userAuth
+    }
+    const response = await fetch(url + 'group', {
+        method: "post",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(bundle)
+    })
+    const data = await response.json()
+    console.log('data: ', data)
+    // props.history.push("/home")
 }
 
 useEffect(() => {
@@ -112,11 +124,11 @@ return (
             />
             <Route
                 path="/search"
-                render={(routerprops) => <Search {...routerprops}/>}
+                render={(routerprops) => <Search {...routerprops} url={url}/>}
             />
             <Route
-                path="/group"
-                render={(routerprops) => <Group {...routerprops}/>}
+                path="/group/:id"
+                render={(routerprops) => <Group {...routerprops} url={url}/>}
             />
             <Route
                 path="/newgroup"

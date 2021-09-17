@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { GroupInfo, UserAuth } from "../atom";
+import { GroupInfo, UserAuth, GroupMembers } from "../atom";
 
 import Header from "../components/Header";
 import HeroImage from "../components/HeroImage";
 import Participants from "../components/Participants";
 
-const Group = ({ url, match }) => {
+const Group = ({ match, url }) => {
 
     const [groupInfo, setGroupInfo] = useRecoilState(GroupInfo)
+    const [groupMembers, setGroupMembers] = useRecoilState(GroupMembers)
     const userAuth = useRecoilValue(UserAuth)
 
     const grabGroupInfo = async () => {
@@ -20,14 +21,33 @@ const Group = ({ url, match }) => {
             body: JSON.stringify(userAuth)
         })
         const data = await response.json()
-        setGroupInfo(data)
+        console.log(data)
+        setGroupInfo(data.group.data)
+        setGroupMembers(data.members.data)
     }
+
+    const joinGroup = async () => {
+        const bundle = {
+            userAuth,
+            id: match.params.id,
+        }
+        const response = await fetch(url + `joingroup`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(bundle)
+        })
+        const data = await response.json()
+        console.log('RES: ', data)
+    }
+
     useEffect(() => {grabGroupInfo()},[])
 
     const loading = () => {
         return(
         <div className="profile">
-            <Header label="loading..." />
+            <Header label="loading..." edit={true} match={match}/>
             <h1>Loading...</h1>
         </div>
         )
@@ -36,11 +56,12 @@ const Group = ({ url, match }) => {
     const loaded = () => {
         return (
             <div className="Group">
-                <Header label={groupInfo.groupName} />
+                <Header label={groupInfo.groupName} edit={true} match={match} />
                 <HeroImage profileImg={false} bannerImg={groupInfo.bannerImg} />
                 <div style={{display: "flex", justifyContent: "space-around"}}>
                     <Participants gameRole="GM" individuals={[groupInfo.gm]}/>
-                    <Participants gameRole="PC" individuals={[groupInfo.players]}/>
+                    <Participants gameRole="PC" individuals={groupMembers}/>
+                    <button onClick={joinGroup}>JOIN</button>
                 </div>
                 <div className="group-info">
                 <h3>Game Info</h3>

@@ -53,18 +53,25 @@ footer {
   margin: 0.5em 1em;
 }
 
+.card-small a {
+  text-decoration: none;
+  color: black;
+}
+
 .card-small img {
   height: 75px;
   width: 75px;
   object-fit: cover;
   border-radius: 90px;
+  margin-right: 1.5em;
 }
 
 .card-small .left {
+  text-align: left;
   width: 45%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: start;
 }
 
 .card-small .right {
@@ -87,6 +94,12 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
+.search-results {
+  overflow: scroll;
+  height: 80vh;
+}
+
 .group-form label{
   margin-top: 1.5em;
 }
@@ -102,4 +115,11 @@ footer {
 .Participants div {
   display: flex;
   justify-content: space-around;
+}
+
+.Participants img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 90px;
 }

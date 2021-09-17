@@ -33,6 +33,11 @@ export const GroupInfo = atom ({
     default: null
 })
 
+export const GroupMembers = atom ({
+    key: "GroupMembers",
+    default: null
+})
+
 export const AllGroups = atom ({
     key: "AllGroups",
     default: null

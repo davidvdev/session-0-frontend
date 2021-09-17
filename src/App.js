@@ -3,7 +3,7 @@ import './App.css';
 // import { useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import { useRecoilState } from 'recoil';
-import { UserAuth } from './atom';
+import { UserAuth,GroupInfo } from './atom';
 
 // components & pages
 import Welcome from './pages/Welcome';
@@ -14,14 +14,24 @@ import Home from './pages/Home';
 import Profile from './pages/Profile'
 import Search from './pages/Search'
 import Group from './pages/Group'
-import NewGroup from './pages/NewGroup';
+import FormPage from './pages/FormPage';
 
 function App(props) {
 // STATE & VARIABLES
 const [userAuth, setUserAuth] = useRecoilState(UserAuth)
+const [targetGroup, setTargetGroup] = useRecoilState(GroupInfo)
 
 const url = "http://localhost:4500/"
 // const url = "https://session-0-dv.herokuapp.com/"
+
+const blankGroup = { 
+    groupName: "",
+    gameInfo:"",
+    groupInfo:"",
+    players:"",
+    gm: "",
+    bannerImg: ""
+}
 
 // API CALLS
 
@@ -49,7 +59,6 @@ const signup = async (formData) => {
         body: JSON.stringify(formData)
     })
     const data = await response.json()
-    console.log('data: ', data)
     setUserAuth(data)
     props.history.push("/signup/details")
 }
@@ -83,8 +92,27 @@ const createNewGroup = async (group) => {
         body: JSON.stringify(bundle)
     })
     const data = await response.json()
-    console.log('data: ', data)
-    // props.history.push("/home")
+    props.history.push(`/group/${data.ref['@ref'].id}`)
+}
+
+const updateGroup = async ({ formData, id }) => {
+    console.log('group: ', formData)
+    const bundle = {
+        data: formData,
+        id: id,
+        userAuth
+    }
+
+    const response = await fetch(url + `group/${id}`,  {
+        method: "put",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(bundle)
+    })
+
+    const data = await response.json()
+    props.history.push(`/group/${id}`)
 }
 
 useEffect(() => {
@@ -132,7 +160,11 @@ return (
             />
             <Route
                 path="/newgroup"
-                render={(routerprops) => <NewGroup {...routerprops} handleSubmit={createNewGroup}/>}
+                render={(routerprops) => <FormPage {...routerprops} initialGroup={blankGroup} label="New Group" handleSubmit={createNewGroup}/>}
+            />
+            <Route
+                path="/editgroup/:id"
+                render={(routerprops) => <FormPage {...routerprops} initialGroup={targetGroup} label="Edit Group" handleSubmit={updateGroup}/>}
             />
         </Switch>
     </div>

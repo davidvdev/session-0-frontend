@@ -5,7 +5,15 @@ const Participants =({ gameRole, individuals }) => {
         <div className="Participants">
             <h3>{gameRole}</h3>
             <div>
-                {individuals.map((ind, i) => <p key={i}>{ind}</p>)}
+                {individuals.map((ind, i) => {
+                    return(
+                        <div key={i} style={{display: "flex", flexDirection: "column"}}>
+                            <img src={ind.img_profile} alt={ind.name}/>
+                            <p style={{marginTop: "0"}}>{ind.name}</p>
+                        </div>
+                    )
+                }
+                )}
             </div>
         </div>
     )

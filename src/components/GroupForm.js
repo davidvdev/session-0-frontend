@@ -1,16 +1,8 @@
 import React, { useState } from "react";
-import Header from "../components/Header";
 
-const NewGroup = ({handleSubmit}) => {
+const GroupForm = ({ handleSubmit, submitLabel, initialGroup, match }) => {
 
-    const [formData, setFormData] = useState({
-        groupName: "",
-        gameInfo:"",
-        groupInfo:"",
-        players:"",
-        gm: "",
-        bannerImg: ""
-    })
+    const [formData, setFormData] = useState(initialGroup)
 
     const handleChange = (event) => {
         setFormData({...formData, [event.target.name]: event.target.value})
@@ -18,12 +10,11 @@ const NewGroup = ({handleSubmit}) => {
 
     const handleSubmission = (event) => {
         event.preventDefault()
-        handleSubmit(formData)
+        const id = match.params.id
+        handleSubmit({formData: formData, id: id})
     }
 
     return (
-    <>
-        <Header label="New Group"/>
         <form 
             onSubmit={handleSubmission} 
             style={{
@@ -88,11 +79,10 @@ const NewGroup = ({handleSubmit}) => {
             />
             <input 
                 type="submit"
-                value="Create Group"
+                value={submitLabel}
             />
         </form>
-    </>
     )
 }
 
-export default NewGroup
+export default GroupForm

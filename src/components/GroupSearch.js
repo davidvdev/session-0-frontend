@@ -12,7 +12,8 @@ const GroupSearch = (props) => {
     }
 
     const handleSubmission = (event) => {
-
+        event.preventDefault()
+        setSearch({term: ""})
     }
 
     return(

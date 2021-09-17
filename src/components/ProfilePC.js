@@ -5,9 +5,9 @@ const ProfilePC = ({ info }) => {
         <div className="subprofile">
             { info.length >= 1 &&
                 <>
-                { info.map(entry => {
+                { info.map((entry, i) => {
                     return (
-                    <div>
+                    <div key={i}>
                         <h3>{entry.system}</h3>
                         <p>{entry.lfg}</p>
                     </div>

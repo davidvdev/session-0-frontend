@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const LoginForm = ({ submitLabel, history, handleSubmit }) => {
+const LoginForm = ({ submitLabel, handleSubmit }) => {
 
     const [formData, setFormData] = useState({
         email: "",
@@ -13,7 +13,6 @@ const LoginForm = ({ submitLabel, history, handleSubmit }) => {
 
     const handleSubmission = (event) => {
         event.preventDefault()
-        console.log('formData: ', formData)
         handleSubmit(formData)
     }
 

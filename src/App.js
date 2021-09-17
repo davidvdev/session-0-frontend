@@ -21,8 +21,8 @@ function App(props) {
 const [userAuth, setUserAuth] = useRecoilState(UserAuth)
 const [targetGroup, setTargetGroup] = useRecoilState(GroupInfo)
 
-const url = "http://localhost:4500/"
-// const url = "https://session-0-dv.herokuapp.com/"
+// const url = "http://localhost:4500/"
+const url = "https://session-0-dv.herokuapp.com/"
 
 const blankGroup = { 
     groupName: "",

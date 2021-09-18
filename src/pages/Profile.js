@@ -14,7 +14,7 @@ const Profile = (props) => {
     const userAuth = useRecoilValue(UserAuth)
 
     const grabProfileInfo = async () => {
-        const response = await fetch(props.url + `user/` + props.userID, {
+        const response = await fetch(props.url + `user/` + props.match.params.id, {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
@@ -38,14 +38,14 @@ const Profile = (props) => {
     const loaded = () => {
         return (
             <div className="Profile">
-                <Header label={userInfo.name} />
+                <Header label={userInfo.name} edit={(props.match.params.id === userAuth.userRef)} {...props}/>
                 <HeroImage 
                     profileImg={userInfo.img_profile}
                     bannerImg={userInfo.img_banner}   
                 />
                 <div className="profile-toggle" style={{display: "flex", justifyContent:"space-around"}}>
-                    <div role="button" onClick={() => {setView("PC")}}>PC</div>
-                    <div role="button" onClick={() => {setView("GM")}}>GM</div>
+                    <div role="button" className={view === "PC" ? 'active': null} onClick={() => {setView("PC")}}>PC</div>
+                    <div role="button" className={view === "GM" ? 'active': null} onClick={() => {setView("GM")}}>GM</div>
                 </div>
                 { userInfo !== null &&
                 <>

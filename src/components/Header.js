@@ -3,7 +3,13 @@ import { Link } from "react-router-dom";
 import { TiArrowLeftThick } from 'react-icons/ti'
 import { MdModeEdit } from 'react-icons/md'
 
-const Header = ({ match, label = " ", back = true, edit = false }) => {
+const Header = ({location, match, label = " ", back = true, edit = false }) => {
+
+    let pageType
+
+    if(location !== undefined){
+        pageType = location.pathname.split("/")[1]
+    }
     return(
         <header>
             { back === true &&
@@ -12,8 +18,13 @@ const Header = ({ match, label = " ", back = true, edit = false }) => {
                 </Link>
             }
             <h1 style={{margin: "0 auto"}}>{label}</h1>
-            { edit === true &&
+            { edit === true && pageType === "group" &&
                 <Link to={`/editgroup/${match.params.id}`}>
+                    <MdModeEdit style={{marginLeft: "auto"}} className="nav-button"/>
+                </Link>
+            }
+            { edit === true && pageType === "profile" &&
+                <Link to={`/signup/details`}>
                     <MdModeEdit style={{marginLeft: "auto"}} className="nav-button"/>
                 </Link>
             }

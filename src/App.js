@@ -96,7 +96,6 @@ const createNewGroup = async (group) => {
 }
 
 const updateGroup = async ({ formData, id }) => {
-    console.log('group: ', formData)
     const bundle = {
         data: formData,
         id: id,
@@ -144,7 +143,7 @@ return (
             />
             <Route
                 path="/home"
-                render={(routerprops) => <Home {...routerprops}/>}
+                render={(routerprops) => <Home {...routerprops} url={url}/>}
             />
             <Route
                 path="/profile/:id"

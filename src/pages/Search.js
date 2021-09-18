@@ -47,11 +47,14 @@ const Search = ({ url }) => {
                 
                 { groups !== null && groups.length > 0 &&
                     <>
-                    {groups.filter(group => searchFunction(group)).map(group => {
-                        return(
-                            <GroupsDisplay group={group}/>
-                        )
-                    })}
+                    {groups.filter(group => searchFunction(group)).map((group,i) => {
+                    return(
+                        <div key={i}>
+                            <GroupsDisplay group={group} i={i}/>
+                        </div>
+                    )
+                }
+                    )}
                     </>
                 }
             </div>

@@ -80,6 +80,7 @@ const GroupForm = ({ handleSubmit, submitLabel, initialGroup, match }) => {
             <input 
                 type="submit"
                 value={submitLabel}
+                className="button"
             />
         </form>
     )

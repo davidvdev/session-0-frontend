@@ -55,7 +55,11 @@ const SignUpForm = ({ submitLabel, history, handleSubmit }) => {
             { formData.password !== formData.passConfirm && formData.passConfirm !=="" &&
                 <p style={{color: "red"}}>passwords do not match</p>
             }
-            <input type="submit" value={submitLabel}/>
+            <input 
+                type="submit" 
+                value={submitLabel}
+                className="button"
+            />
         </form>
     )
 }

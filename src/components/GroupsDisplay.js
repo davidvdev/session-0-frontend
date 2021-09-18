@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const GroupsDisplay = ({ group }) => {
+const GroupsDisplay = ({ group, i }) => {
     return(
-        <Link to={`/group/${group.ref['@ref'].id}`}>
-            <div className="card-small" key={group.ref['@ref'].id}>
+        <Link to={`/group/${group.ref['@ref'].id}`} style={{color: "inherit", textDecoration:"none"}}>
+            <div className="card-small" key={i}>
                 <div className="left">
                     <img src={group.data.bannerImg} alt="group emblem"/>
                     <h3>{group.data.groupName}</h3>

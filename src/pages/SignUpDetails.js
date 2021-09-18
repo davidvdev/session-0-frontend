@@ -56,7 +56,7 @@ const SignUpDetails = ({history, handleSubmit}) => {
                     { userProfiles.gm !== true &&
                         <>
                         <br />
-                        <input type="submit" value="Save" />
+                        <input type="submit" value="Save" className="button"/>
                         </>
                     }
                 </form>
@@ -80,7 +80,7 @@ const SignUpDetails = ({history, handleSubmit}) => {
                     { userProfiles.gm === true &&
                         <>
                         <br />
-                        <input type="submit" value="Save" />
+                        <input type="submit" value="Save" className="button"/>
                         </>
                     }
                 </form>

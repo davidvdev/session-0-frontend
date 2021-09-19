@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import './App.css';
 // import { useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
-import { useRecoilState } from 'recoil';
-import { UserAuth,GroupInfo } from './atom';
+import { useRecoilState, useRecoilValue } from 'recoil';
+import { UserAuth,GroupInfo, UserInfo } from './atom';
 
 // components & pages
 import Welcome from './pages/Welcome';
@@ -15,11 +15,14 @@ import Profile from './pages/Profile'
 import Search from './pages/Search'
 import Group from './pages/Group'
 import FormPage from './pages/FormPage';
+import EditProfile from './pages/EditProfile';
 
 function App(props) {
 // STATE & VARIABLES
 const [userAuth, setUserAuth] = useRecoilState(UserAuth)
 const [targetGroup, setTargetGroup] = useRecoilState(GroupInfo)
+
+const currentUser = useRecoilValue(UserInfo)
 
 const url = "http://localhost:4500/"
 // const url = "https://session-0-dv.herokuapp.com/"
@@ -148,6 +151,10 @@ return (
             <Route
                 path="/profile/:id"
                 render={(routerprops) => <Profile {...routerprops} url={url} userID={userAuth.userRef}/>}
+            />
+            <Route
+                path="/editprofile/:id"
+                render={(routerprops) => <EditProfile {...routerprops} url={url} userID={userAuth.userRef} handleSubmit={updateProfile} user={currentUser}/>}
             />
             <Route
                 path="/search"

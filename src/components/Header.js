@@ -24,7 +24,7 @@ const Header = ({location, match, label = " ", back = true, edit = false }) => {
                 </Link>
             }
             { edit === true && pageType === "profile" &&
-                <Link to={`/signup/details`}>
+                <Link to={`/editprofile/${match.params.id}`}>
                     <MdModeEdit style={{marginLeft: "auto"}} className="nav-button"/>
                 </Link>
             }

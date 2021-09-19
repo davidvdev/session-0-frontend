@@ -17,15 +17,7 @@ const GroupForm = ({ handleSubmit, submitLabel, initialGroup, match }) => {
     return (
         <form 
             onSubmit={handleSubmission} 
-            style={{
-                display: "flex", 
-                flexDirection:"column",
-                justifyContent: "space-around", 
-                width: "80%", 
-                height: "80vh",
-                margin: "0 auto"
-                }}
-            className="group-form"
+            className="edit-form"
         >
             <label htmlFor="groupName">What is the name of your group?</label>
             <input

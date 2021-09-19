@@ -174,11 +174,20 @@ div .active {
   height: 80vh;
 }
 
-.group-form label{
+form.edit-form {
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-around; 
+  width: 80%;
+  height: 80vh;
+  margin: 0 auto;
+}
+
+.edit-form label{
   margin-top: 1.5em;
 }
 
-.group-info {
+.edit-info {
   text-align: left;
   padding: 0.5em 1em;
 }

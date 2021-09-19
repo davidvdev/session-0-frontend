@@ -5,10 +5,9 @@ import LogoSplash from "../components/LogoSplash";
 
 const Welcome = () => {
     return(
-    <>
+    <div className="Welcome">
         <LogoSplash />
-		<hr />
-		<div>
+		<div className="onboarding-options">
 			<Link to="/login">
 				<button>Login</button>
 			</Link>
@@ -17,7 +16,7 @@ const Welcome = () => {
 				<button>Sign Up</button>
 			</Link>
 		</div>
-    </>
+    </div>
     )
 }
 

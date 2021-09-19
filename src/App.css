@@ -8,6 +8,54 @@
   text-align: center;
   height: 100vh;
 }
+
+.Welcome, .SignUpDetails-back {
+  color: white;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: linear-gradient( var(--teal-light), var(--teal-dark));
+}
+
+.Welcome img {
+  background-color: white;
+  border-radius: 180px;
+}
+
+.Welcome .onboarding-options {
+  padding: 1.5em;
+  width: 30%;
+  margin: 0 auto;
+  border-radius: 30px;
+  color: black;
+  background-color: white;
+}
+
+.Welcome form.onboarding-options {
+  width: 60%;
+}
+
+.Welcome form.onboarding-options input {
+  margin: 0.5em 0;
+}
+
+.SignUpDetails {
+  color: black;
+  background-color: white;
+  border-radius: 30px;
+  margin: 2em;
+  padding: 1em;
+}
+
+.SignUpDetails .button {
+  margin: 0.5em;
+}
+
+.SignUpDetails label {
+  margin: 0 2em 0 0.25em;
+}
+
 header {
   justify-self: start;
 }
@@ -40,7 +88,6 @@ button:active, .button:active {
   box-shadow: 0 0 2px black;
 
 }
-
 
 .nav-button {
   color: white;

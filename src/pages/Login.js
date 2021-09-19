@@ -6,11 +6,10 @@ import LoginForm from "../components/LoginForm";
 const Login = (props) => {
 
     return(
-    <>
+    <div className="Welcome">
 		<LogoSplash />
-		<hr />
 		<LoginForm {...props} handleSubmit={props.login} submitLabel="Login"/>
-    </>
+    </div>
     )
 }
 

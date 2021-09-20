@@ -4,6 +4,7 @@
   --teal-light: #14BB97;
 }
 
+
 .App {
   text-align: center;
   height: 100vh;
@@ -174,22 +175,46 @@ div .active {
   height: 80vh;
 }
 
+.EditProfile {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
 form.edit-form {
+  box-sizing: border-box;
+  overflow: scroll;
+  justify-self: flex-start;
+  height: 85vh;
+  width: 80%;
+  padding: 1em 0;
+  margin: 0 auto 2em auto
+}
+
+form.edit-form, div.section {
   display: flex; 
   flex-direction: column;
-  justify-content: space-around; 
-  width: 80%;
-  height: 80vh;
-  margin: 0 auto;
 }
 
 .edit-form label{
   margin-top: 1.5em;
 }
 
+.edit-form h3 {
+  margin-bottom: 0;
+}
+
 .edit-info {
   text-align: left;
   padding: 0.5em 1em;
+}
+
+div.section {
+  border: 1px solid var(--teal);
+  border-radius: 30px;
+  padding: 1em;
+  margin: 0.25em auto;
+  width: 90%;
 }
 
 .Participants {

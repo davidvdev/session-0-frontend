@@ -26,8 +26,8 @@ const SignUpDetails = ({history, handleSubmit}) => {
     const handleSubmission = (event) => {
         event.preventDefault()
         handleSubmit({
-            "profile_pc": [pcFormData], 
-            "profile_gm": [gmFormData]
+            profile_pc: [pcFormData], 
+            profile_gm: [gmFormData]
         })
     }
 
@@ -87,7 +87,7 @@ const SignUpDetails = ({history, handleSubmit}) => {
                     </form>
                 }
                 <h4>or</h4>
-                <Link to="/home">
+                <Link to="/home" onClick={handleSubmission}>
                     <h4>I'll set this up later...</h4>
                 </Link>
                 <h5>Are you both? No worries! All users have a Player profile and a Game Master profile, we just want to help you start off on the right foot.</h5>

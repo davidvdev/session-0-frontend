@@ -72,7 +72,7 @@ const updateProfile = async (update) => {
         userAuth
     }
 
-    await fetch(url + 'user', {
+    const response = await fetch(url + 'user', {
         method: "put",
         headers: {
             "Content-Type": "application/json"
@@ -80,6 +80,7 @@ const updateProfile = async (update) => {
         body: JSON.stringify(bundle)
     })
     props.history.push("/home")
+    console.log('response: ', response)
 }
 
 const createNewGroup = async (group) => {

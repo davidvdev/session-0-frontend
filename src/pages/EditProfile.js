@@ -32,13 +32,8 @@ const EditProfile = ({ user, handleSubmit, match}) => {
                 "profile_pc": [pcFormData],
                 "profile_gm": [gmFormData]
         }
-        console.log('BUNDLE: ', bundle)
         handleSubmit(bundle)
     }
-
-    console.log("USER: ", user)
-    console.log("FD-PC: ", pcFormData)
-    console.log("FD-GM: ", gmFormData)
 
     return(
         <div className="EditProfile">
@@ -91,7 +86,7 @@ const EditProfile = ({ user, handleSubmit, match}) => {
                         name="lfgPC" 
                         id="yesPC" 
                         value={true} 
-                        checked={pcFormData.lfg == true}
+                        checked={pcFormData.lfg === true}
                         onChange={handleChangePC}
                     />
                     <label htmlFor="yesPC">Yes</label>
@@ -100,7 +95,7 @@ const EditProfile = ({ user, handleSubmit, match}) => {
                         name="lfgPC" 
                         id="noPC" 
                         value={false} 
-                        checked={pcFormData.lfg == false}
+                        checked={pcFormData.lfg === false}
                         onChange={handleChangePC}/>
                     <label htmlFor="noPC">No</label>
                 </div>
@@ -122,7 +117,7 @@ const EditProfile = ({ user, handleSubmit, match}) => {
                         name="lfgGM" 
                         id="yesGM" 
                         value={true} 
-                        checked={gmFormData.lfg == true}
+                        checked={gmFormData.lfg === true}
                         onChange={handleChangeGM}
                     />
                     <label htmlFor="yesGM">Yes</label>
@@ -131,7 +126,7 @@ const EditProfile = ({ user, handleSubmit, match}) => {
                         name="lfgGM" 
                         id="noGM" 
                         value={false} 
-                        checked={gmFormData.lfg == false}
+                        checked={gmFormData.lfg === false}
                         onChange={handleChangeGM}
                     />
                     <label htmlFor="noGM">No</label>

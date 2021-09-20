@@ -80,7 +80,6 @@ const updateProfile = async (update) => {
         body: JSON.stringify(bundle)
     })
     props.history.push("/home")
-    console.log('response: ', response)
 }
 
 const createNewGroup = async (group) => {

@@ -17,10 +17,18 @@ const SignUpDetails = ({history, handleSubmit}) => {
     })
 
     const handleChangeGM = (event) => {
-        setGMFormData({...gmFormData, [event.target.name]: event.target.value})
+        if (event.target.name === "systemGM"){
+            setGMFormData({...gmFormData, system: event.target.value})
+        } else if (event.target.name === "lfgGM"){
+            setGMFormData({...gmFormData, lfg: event.target.value === 'true' ? true : false})
+        }
     }
     const handleChangePC = (event) => {
-        setPCFormData({...pcFormData, [event.target.name]: event.target.value})
+        if (event.target.name === "systemPC"){
+            setPCFormData({...pcFormData, system: event.target.value})
+        } else if (event.target.name === "lfgPC"){
+            setPCFormData({...pcFormData, lfg: event.target.value === 'true' ? true : false})
+        }
     }
 
     const handleSubmission = (event) => {
@@ -45,15 +53,27 @@ const SignUpDetails = ({history, handleSubmit}) => {
                         <h4>What game/system are you currently playing or looking to play?</h4>
                         <input
                             type="text"
-                            name="system"
+                            name="systemPC"
                             value={pcFormData.system}
                             onChange={handleChangePC}
                         />
                         <h4>Are you looking for a group to join?</h4>
-                        <input type="radio" name="lfg" id="yes" value={true} onChange={handleChangePC}/>
-                        <label htmlFor="yes">Yes</label>
-                        <input type="radio" name="lfg" id="no" value={false} onChange={handleChangePC}/>
-                        <label htmlFor="no">No</label>
+                        <input 
+                            type="radio" 
+                            name="lfgPC" 
+                            id="yesPC" 
+                            value={true} 
+                            onChange={handleChangePC}
+                        />
+                        <label htmlFor="yesPC">Yes</label>
+                        <input 
+                            type="radio" 
+                            name="lfgPC" 
+                            id="noPC" 
+                            value={false} 
+                            onChange={handleChangePC}
+                        />
+                        <label htmlFor="noPC">No</label>
                         { userProfiles.gm !== true &&
                             <>
                             <br />
@@ -69,15 +89,27 @@ const SignUpDetails = ({history, handleSubmit}) => {
                         <h4>What game/system are you currently running or looking to run?</h4>
                         <input
                             type="text"
-                            name="system"
+                            name="systemGM"
                             value={gmFormData.system}
                             onChange={handleChangeGM}
                         />
                         <h4>Are you looking for a group to run?</h4>
-                        <input type="radio" name="lfg" id="yes" value={true} onChange={handleChangeGM}/>
-                        <label htmlFor="yes">Yes</label>
-                        <input type="radio" name="lfg" id="no" value={false} onChange={handleChangeGM}/>
-                        <label htmlFor="no">No</label>
+                        <input 
+                            type="radio" 
+                            name="lfgGM" 
+                            id="yesGM" 
+                            value={true} 
+                            onChange={handleChangeGM}
+                        />
+                        <label htmlFor="yesGM">Yes</label>
+                        <input 
+                            type="radio" 
+                            name="lfgGM" 
+                            id="noGM" 
+                            value={false} 
+                            onChange={handleChangeGM}
+                        />
+                        <label htmlFor="noGM">No</label>
                         { userProfiles.gm === true &&
                             <>
                             <br />

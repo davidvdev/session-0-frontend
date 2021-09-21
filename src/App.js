@@ -22,6 +22,7 @@ function App(props) {
 const [userAuth, setUserAuth] = useRecoilState(UserAuth)
 const [targetGroup, setTargetGroup] = useRecoilState(GroupInfo)
 
+
 const currentUser = useRecoilValue(UserInfo)
 
 // const url = "http://localhost:4500/"

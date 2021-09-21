@@ -32,8 +32,6 @@ const blankGroup = {
     groupName: "",
     gameInfo:"",
     groupInfo:"",
-    players:"",
-    gm: "",
     bannerImg: ""
 }
 

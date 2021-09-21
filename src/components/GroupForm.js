@@ -11,6 +11,7 @@ const GroupForm = ({ handleSubmit, submitLabel, initialGroup, match }) => {
     const handleSubmission = (event) => {
         event.preventDefault()
         const id = match.params.id
+        console.log("Bundle: ", {formData: formData, id: id})
         handleSubmit({formData: formData, id: id})
     }
 

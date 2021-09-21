@@ -47,8 +47,12 @@ const login = async (formData) => {
         body: JSON.stringify(formData)
     })
     const data = await response.json()
-    setUserAuth(data)
-    props.history.push("/home")
+    if (data.message.includes("failed")){
+        alert("Password/Email combination incorrect.")
+    } else {
+        setUserAuth(data)
+        props.history.push("/home")
+    }
 }
 
 // user signup/account creation

@@ -45,7 +45,7 @@ const GroupForm = ({ handleSubmit, submitLabel, initialGroup, match }) => {
                 style={{resize: "vertical", fontFamily: "inherit"}}
                 value={formData.groupInfo}
             />
-            <label htmlFor="gm">Who's running the game?</label>
+            {/* <label htmlFor="gm">Who's running the game?</label>
             <input
                 type="text"
                 id="gm"
@@ -60,7 +60,7 @@ const GroupForm = ({ handleSubmit, submitLabel, initialGroup, match }) => {
                 name="players"
                 onChange={handleChange}
                 value={formData.players}
-            />
+            /> */}
             <label htmlFor="bannerImg">Add an image link for a banner.</label>
             <input
                 type="text"
@@ -69,6 +69,7 @@ const GroupForm = ({ handleSubmit, submitLabel, initialGroup, match }) => {
                 onChange={handleChange}
                 value={formData.bannerImg}
             />
+            <br />
             <input 
                 type="submit"
                 value={submitLabel}

@@ -116,6 +116,7 @@ button:active, .button:active {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border: 1px solid var(--teal-light);
   border-radius: 1em;
   padding: 0.5em 2em;

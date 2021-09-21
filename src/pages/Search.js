@@ -39,8 +39,7 @@ const Search = ({ url }) => {
         const st = search.term.toLowerCase()
         return (
             g.groupName.toLowerCase().includes(st) || 
-            g.gameInfo.toLowerCase().includes(st) || 
-            g.gm.toLowerCase().includes(st)
+            g.gameInfo.toLowerCase().includes(st)
             )
     }
 

@@ -45,6 +45,14 @@ const Group = ({ location, match, url }) => {
         grabGroupInfo()
     }
 
+    const isUserActive = (role) => {
+        if (groupMembers.filter(m => m.role === role && m.ref['@ref'].id === userAuth.userRef).length > 0){
+            return true
+        } else {
+            return false
+        }
+    }
+
     useEffect(() => {grabGroupInfo()},[])
 
     const loading = () => {
@@ -76,8 +84,18 @@ const Group = ({ location, match, url }) => {
                 <p>{groupInfo.groupInfo}</p>
                 </div>
                 <div style={{display: "flex", justifyContent: "space-around"}}>
-                <button onClick={() => joinGroup("GM")} style={{margin: "0 auto"}}>Join as a GM</button>
-                <button onClick={() => joinGroup("PC")} style={{margin: "0 auto"}}>Join as a PC</button>
+                    {!isUserActive("GM") &&
+                        <button 
+                            onClick={() => joinGroup("GM")} 
+                            style={{margin: "0 auto"}}
+                        >Join as a GM</button>
+                    }
+                    {!isUserActive("PC") &&
+                        <button 
+                            onClick={() => joinGroup("PC")} 
+                            style={{margin: "0 auto"}}
+                        >Join as a PC</button>
+                    }   
                 </div>
             </div>
         )

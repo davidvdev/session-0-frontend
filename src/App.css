@@ -4,10 +4,59 @@
   --teal-light: #14BB97;
 }
 
+
 .App {
   text-align: center;
   height: 100vh;
 }
+
+.Welcome, .SignUpDetails-back {
+  color: white;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: linear-gradient( var(--teal-light), var(--teal-dark));
+}
+
+.Welcome img {
+  background-color: white;
+  border-radius: 180px;
+}
+
+.Welcome .onboarding-options {
+  padding: 1.5em;
+  width: 30%;
+  margin: 0 auto;
+  border-radius: 30px;
+  color: black;
+  background-color: white;
+}
+
+.Welcome form.onboarding-options {
+  width: 60%;
+}
+
+.Welcome form.onboarding-options input {
+  margin: 0.5em 0;
+}
+
+.SignUpDetails {
+  color: black;
+  background-color: white;
+  border-radius: 30px;
+  margin: 2em;
+  padding: 1em;
+}
+
+.SignUpDetails .button {
+  margin: 0.5em;
+}
+
+.SignUpDetails label {
+  margin: 0 2em 0 0.25em;
+}
+
 header {
   justify-self: start;
 }
@@ -41,7 +90,6 @@ button:active, .button:active {
 
 }
 
-
 .nav-button {
   color: white;
   height: 2em;
@@ -68,6 +116,7 @@ button:active, .button:active {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border: 1px solid var(--teal-light);
   border-radius: 1em;
   padding: 0.5em 2em;
@@ -127,13 +176,46 @@ div .active {
   height: 80vh;
 }
 
-.group-form label{
+.EditProfile {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+form.edit-form {
+  box-sizing: border-box;
+  overflow: scroll;
+  justify-self: flex-start;
+  height: 85vh;
+  width: 80%;
+  padding: 1em 0;
+  margin: 0 auto 2em auto
+}
+
+form.edit-form, div.section {
+  display: flex; 
+  flex-direction: column;
+}
+
+.edit-form label{
   margin-top: 1.5em;
 }
 
-.group-info {
+.edit-form h3 {
+  margin-bottom: 0;
+}
+
+.edit-info {
   text-align: left;
   padding: 0.5em 1em;
+}
+
+div.section {
+  border: 1px solid var(--teal);
+  border-radius: 30px;
+  padding: 1em;
+  margin: 0.25em auto;
+  width: 90%;
 }
 
 .Participants {

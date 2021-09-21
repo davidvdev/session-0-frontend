@@ -17,10 +17,11 @@ const LoginForm = ({ submitLabel, handleSubmit }) => {
     }
 
     return (
-        <form onSubmit={handleSubmission}>
+        <form onSubmit={handleSubmission} className="onboarding-options">
             <label htmlFor="email">email </label>
             <input 
                 type="email"
+                id="email"
                 name="email"
                 onChange={handleChange}
                 value={formData.email}
@@ -30,12 +31,13 @@ const LoginForm = ({ submitLabel, handleSubmit }) => {
             <label htmlFor="password">password </label>
             <input 
                 type="password"
+                id="password"
                 name="password"
                 onChange={handleChange}
                 value={formData.password}
             />
             <br />
-            <input type="submit" value={submitLabel}/>
+            <input type="submit" value={submitLabel} className="button"/>
         </form>
     )
 }

@@ -19,7 +19,9 @@ const SignUpForm = ({ submitLabel, history, handleSubmit }) => {
     }
 
     return (
-        <form onSubmit={handleSubmission}>
+        <form onSubmit={handleSubmission} className="onboarding-options">
+		<h3>Let's roll up your account...</h3>
+
             <label htmlFor="name">name </label>
             <input 
                 type="name"

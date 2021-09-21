@@ -11,7 +11,7 @@ const GroupsDisplay = ({ group, i }) => {
                 </div>
                 <div className="right">
                     <h4>{group.data.gameInfo}</h4>
-                    <h5>{group.data.gm}</h5>
+                    {/* <h5>{group.data.gm}</h5> */}
                 </div>
             </div>
         </Link>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const LoginForm = ({ submitLabel, handleSubmit }) => {
 
@@ -38,6 +39,9 @@ const LoginForm = ({ submitLabel, handleSubmit }) => {
             />
             <br />
             <input type="submit" value={submitLabel} className="button"/>
+            <Link to="/signup">
+                <p>(or create an account)</p>
+            </Link>
         </form>
     )
 }

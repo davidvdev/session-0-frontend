@@ -46,7 +46,7 @@ const login = async (formData) => {
         body: JSON.stringify(formData)
     })
     const data = await response.json()
-    if (data.message.includes("failed")){
+    if (data.message !== undefined){
         alert("Password/Email combination incorrect.")
     } else {
         setUserAuth(data)

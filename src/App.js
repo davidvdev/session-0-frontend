@@ -24,8 +24,8 @@ const [targetGroup, setTargetGroup] = useRecoilState(GroupInfo)
 
 const currentUser = useRecoilValue(UserInfo)
 
-const url = "http://localhost:4500/"
-// const url = "https://session-0-dv.herokuapp.com/"
+// const url = "http://localhost:4500/"
+const url = "https://session-0-dv.herokuapp.com/"
 
 const blankGroup = { 
     groupName: "",

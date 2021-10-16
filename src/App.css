@@ -1,22 +1,22 @@
 :root {
-  --teal: #11A584;
-  --teal-dark: #109A7C;
-  --teal-light: #14BB97;
+  --teal: #11a584;
+  --teal-dark: #109a7c;
+  --teal-light: #14bb97;
 }
-
 
 .App {
   text-align: center;
   height: 100vh;
 }
 
-.Welcome, .SignUpDetails-back {
+.Welcome,
+.SignUpDetails-back {
   color: white;
   height: inherit;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background: linear-gradient( var(--teal-light), var(--teal-dark));
+  background: linear-gradient(var(--teal-light), var(--teal-dark));
 }
 
 .Welcome img {
@@ -60,34 +60,37 @@
 header {
   justify-self: start;
 }
-header, footer {
+header,
+footer {
   padding: 1em 0.5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--teal);
-  color: white
+  color: white;
 }
 footer {
   justify-self: end;
 }
 
-button, .button {
+button,
+.button {
   background-color: var(--teal);
   padding: 0.5em 1em;
   border-radius: 5px;
   border: none;
   box-shadow: 1px 1px 3px black;
-  color: white
+  color: white;
 }
 
-button:hover, .button:hover {
+button:hover,
+.button:hover {
   background-color: var(--teal-dark);
 }
-button:active, .button:active {
+button:active,
+.button:active {
   background-color: var(--teal-light);
   box-shadow: 0 0 2px black;
-
 }
 
 .nav-button {
@@ -189,15 +192,16 @@ form.edit-form {
   height: 85vh;
   width: 80%;
   padding: 1em 0;
-  margin: 0 auto 2em auto
+  margin: 0 auto 2em auto;
 }
 
-form.edit-form, div.section {
-  display: flex; 
+form.edit-form,
+div.section {
+  display: flex;
   flex-direction: column;
 }
 
-.edit-form label{
+.edit-form label {
   margin-top: 1.5em;
 }
 
@@ -232,4 +236,11 @@ div.section {
   height: 50px;
   object-fit: cover;
   border-radius: 90px;
+}
+
+.intro-paragraph {
+  max-width: 500px;
+  text-align: left;
+  margin: 0 auto;
+  padding: 0 1rem;
 }

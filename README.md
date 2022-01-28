@@ -1,4 +1,4 @@
-# Session 0 - GA Capstone
+# [Session 0 - GA Capstone](http://session-0-frontend.vercel.app/)
 ## Description
 
 **Session 0** is a social groups app designed to help tabletop roleplayers find groups to join! There are many features in the pipeline for further functionality, but this initial prototype is an example of how the app would function at a small scale.
